@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/web.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+    
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-2.1.1.min.js"></script>
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-2.1.1.min.css">
+    <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.1.1.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+
+    <h1>Dashboard for visualizations</h1>
+    <div class=container>
+        {% for eh in hor %}
+        {% for eins in eh %}
+            <div class="hor">
+            {{eins|safe}}
+            </div>
+        {% endfor %}
+         {% endfor %}
+    <div class = "bes">
+    {% for eg in bok %}
+    {% for einside in eg %}
+        <div class="ver">
+        {{einside|safe}}
+        </div>
+    {% endfor %}
+
+    {% endfor %}
+</div>
+    </div>
+    <div class="gr">
+    {{ fig |safe}}
+    </div>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "346b7245-5170-4e27-936c-75b13bb28b13", // The ID of this integration.
+            region: "eu-gb", // The region your integration is hosted in.
+            serviceInstanceID: "a3c3ca8d-994e-4023-a4e0-14f7fa1cce7e", // The ID of your service instance.
+            onLoad: function (instance) { instance.render(); }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+            document.head.appendChild(t);
+        });
+    </script>
+
+</body>
+
+</html>
