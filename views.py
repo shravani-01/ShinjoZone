@@ -107,8 +107,6 @@ def help(request):
 
 # def (request):
 #     return render(request, 'home/.html')
-
-
 # def index(request):
 #     x = [1, 3, 5, 7, 9, 11, 13]
 #     y = [1, 2, 3, 4, 5, 6, 7]
